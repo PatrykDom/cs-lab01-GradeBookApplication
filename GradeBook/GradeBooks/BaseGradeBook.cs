@@ -159,7 +159,7 @@ namespace GradeBook.GradeBooks
                         break;
                 }
             }
-            // #todo refactor into it's own method with calculations performed here
+            
             Console.WriteLine("Average Grade of all students is " + (allStudentsPoints / Students.Count));
             if (campusPoints != 0)
                 Console.WriteLine("Average for only local students is " + (campusPoints / Students.Where(e => e.Enrollment == EnrollmentType.Campus).Count()));
@@ -202,13 +202,8 @@ namespace GradeBook.GradeBooks
             else
                 return 'F';
         }
-        /// <summary>
-        ///     Converts json to the appropriate gradebook type.
-        ///     Note: This method contains code that is not recommended practice.
-        ///     This has been used as a compromise to avoid adding additional complexity to the learner.
-        /// </summary>
-        /// <returns>The to gradebook.</returns>
-        /// <param name="json">Json.</param>
+       
+      
         public static dynamic ConvertToGradeBook(string json)
         {
             // Get GradeBookType from the GradeBook.Enums namespace
